@@ -4,7 +4,7 @@ on:
 
 jobs:
   notify-merge:
-    if: github.event_name == 'push'  # Solo en pushes (merges) a develop
+    if: github.event_name == 'push' 
     runs-on: ubuntu-latest
     steps:
       - name: Notify Discord on Merge
@@ -12,6 +12,6 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
-          args: 'Merge exitoso a develop! Commit: {{ EVENT_PAYLOAD.head_commit.message }} por {{ EVENT_PAYLOAD.pusher.name }}'
+          args: 'Merge exitoso a develop Commit: {{ EVENT_PAYLOAD.head_commit.message }} por {{ EVENT_PAYLOAD.pusher.name }}'
 
-          #PRUEBA
+           
